@@ -1,14 +1,19 @@
+<div class="text-center">
 <p id="notice"><%= notice %></p>
 
+<h3 class="text-success"><em><small class="text-success">my</small></em>TODO</h3>
+<hr>
+<h1><%= @task.task %></h1>
+
 <p>
-  <strong>Task:</strong>
-  <%= @task.task %>
+ <em><%= @task.details %></em>
 </p>
 
 <p>
-  <strong>Details:</strong>
-  <%= @task.details %>
+	<%= @task.created_at.strftime('%b %-d %Y') %>
 </p>
+<hr>
+<%= link_to 'Edit', edit_task_path(@task), class: 'btn btn-warning btn-sm' %>
+<%= link_to 'List', tasks_path, class: 'btn btn-success btn-sm' %>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+</div>
