@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Tasks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Task</th>
-      <th>Details</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<div class="text-center">
+<h3 class="text-success"><em><small class="text-success">my</small></em>Tasks</h3>
+<hr>
+<div class="table-responsive">
+<table class="table-striped text-left">
+ 
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.task %></td>
-        <td><%= task.details %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td id="first"><h4><%= link_to raw("<i class=\"fa fa-times\" aria-hidden=\"true\"></i>"), task, method: :delete, data: { confirm: 'Delete this task?' }, class: "btn btn-default btn-sm" %></h4></td>
+        <td><h4><%= task.task %></h4></td>
+        <td id="end"><h4><%= link_to '', task, class: "fa fa-info-circle" %></h4></td>
+        <td id="end"><h4><%= link_to '', edit_task_path(task), class: "fa fa-pencil-square-o" %></h4></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Task', new_task_path %>
+</div>

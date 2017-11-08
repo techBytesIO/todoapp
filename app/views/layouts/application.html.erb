@@ -7,10 +7,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'main', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://use.fontawesome.com/929870e632.js"></script>
   </head>
 
   <body>
     <div class="container">
+      <p id="notice" class="text-center"><%= notice %></p>
       <%= yield %>
     </div><!-- container -->
   </body>
